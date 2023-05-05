@@ -1,5 +1,4 @@
 import Ingredient from "./Ingredient"
-import { ingredients } from "../../data/burger-data"
 
 const IngredientList = (props) => {
 	return (
