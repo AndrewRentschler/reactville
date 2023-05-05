@@ -1,10 +1,22 @@
 import '../../styles/burger.css'
+import { useState } from 'react'
 
+// Components
+import BurgerStack from './BurgerStack'
+import IngredientList from './IngredientList'
 import { ingredients } from '../../data/burger-data'
 
 const BurgerShop = () => {
   console.log(ingredients)
+  const [stack, setStack] = useState([])
   
+  const handleAddItem = (newItem) => {
+    setStack([...stack, newItem])
+  }
+  const handleRemoveItem = (idx) => {
+    setStack(stack.filter((ingredient, i) => i !== idx))
+  }
+
   return (
     <div className="burger-shop">
       <nav>
@@ -12,8 +24,14 @@ const BurgerShop = () => {
         <button>Clear Order</button>
       </nav>
       <section>
-        IngredientList component here
-        BurgerStack component here
+        <IngredientList 
+          ingredients={ingredients}
+          handleAddItem={handleAddItem}
+          />
+        <BurgerStack 
+          stack={stack} 
+          handleRemoveItem={handleRemoveItem}
+        />
       </section>
     </div>
   )
