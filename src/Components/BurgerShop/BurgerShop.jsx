@@ -16,12 +16,15 @@ const BurgerShop = () => {
   const handleRemoveItem = (idx) => {
     setStack(stack.filter((ingredient, i) => i !== idx))
   }
+  const clearStack = () => {
+    setStack([])
+  }
 
   return (
     <div className="burger-shop">
       <nav>
         <h1>Burger Shop</h1>
-        <button>Clear Order</button>
+        <button onClick={clearStack}>Clear Order</button>
       </nav>
       <section>
         <IngredientList 
