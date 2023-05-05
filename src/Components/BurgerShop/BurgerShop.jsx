@@ -23,7 +23,7 @@ const BurgerShop = () => {
   return (
     <div className="burger-shop">
       <nav>
-        <h1>Burger Shop</h1>
+        <h1 style={{}}>Burger Shop</h1>
         <button onClick={clearStack}>Clear Order</button>
       </nav>
       <section>
